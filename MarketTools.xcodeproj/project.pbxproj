@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B25E2B2BC3880B00C3AFFB /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B25E2A2BC3880B00C3AFFB /* ListModel.swift */; };
+		96B25E2E2BC38ECE00C3AFFB /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B25E2D2BC38ECE00C3AFFB /* AddView.swift */; };
 		96BE4F0B2BC37C420085DBDF /* MarketToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE4F0A2BC37C420085DBDF /* MarketToolsApp.swift */; };
 		96BE4F0D2BC37C420085DBDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE4F0C2BC37C420085DBDF /* ContentView.swift */; };
 		96BE4F0F2BC37C440085DBDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BE4F0E2BC37C440085DBDF /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96B25E2A2BC3880B00C3AFFB /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		96B25E2D2BC38ECE00C3AFFB /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		96BE4F072BC37C420085DBDF /* MarketTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BE4F0A2BC37C420085DBDF /* MarketToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketToolsApp.swift; sourceTree = "<group>"; };
 		96BE4F0C2BC37C420085DBDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96B25E292BC387DB00C3AFFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96B25E2A2BC3880B00C3AFFB /* ListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96B25E2C2BC38EA200C3AFFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96B25E2D2BC38ECE00C3AFFB /* AddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		96BE4EFE2BC37C420085DBDF = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +71,8 @@
 		96BE4F092BC37C420085DBDF /* MarketTools */ = {
 			isa = PBXGroup;
 			children = (
+				96B25E2C2BC38EA200C3AFFB /* Views */,
+				96B25E292BC387DB00C3AFFB /* Model */,
 				96BE4F0A2BC37C420085DBDF /* MarketToolsApp.swift */,
 				96BE4F0C2BC37C420085DBDF /* ContentView.swift */,
 				96BE4F0E2BC37C440085DBDF /* Assets.xcassets */,
@@ -137,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B25E2E2BC38ECE00C3AFFB /* AddView.swift in Sources */,
+				96B25E2B2BC3880B00C3AFFB /* ListModel.swift in Sources */,
 				96BE4F0D2BC37C420085DBDF /* ContentView.swift in Sources */,
 				96BE4F0B2BC37C420085DBDF /* MarketToolsApp.swift in Sources */,
 			);
