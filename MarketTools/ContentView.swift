@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
-
+import SwiftData
 struct ContentView: View {
+    
+    @Query private var items:[ListModel]
     var body: some View {
         VStack {
             Image(systemName: "globe")
