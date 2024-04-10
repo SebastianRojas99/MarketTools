@@ -36,12 +36,10 @@ struct ContentView: View {
             }.sheet(isPresented: $show, content: {
                 NavigationStack{
                     AddView()
-                }
+                }.presentationDetents([.medium])
             })
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}
+
