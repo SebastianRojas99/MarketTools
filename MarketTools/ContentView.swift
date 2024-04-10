@@ -9,7 +9,8 @@ import SwiftUI
 import SwiftData
 struct ContentView: View {
     
-    @Query private var items:[ListModel]
+    
+    @Query (sort:\ListModel.title,order: .forward) private var items:[ListModel]
     @State private var show = false
     var body: some View {
         NavigationStack{

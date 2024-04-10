@@ -26,3 +26,5 @@ final class ListModel{
         self.total = total
     }
 }
+
+
