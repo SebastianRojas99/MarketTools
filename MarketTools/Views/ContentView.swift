@@ -18,16 +18,18 @@ struct ContentView: View {
             List{
                 Section("Activas"){
                     ForEach(items){ item in
-                        CardView(item: item)
-                            .swipeActions{
-                                Button(role:.destructive){
-                                    withAnimation{
-                                        context.delete(item)
+                        NavigationLink(value:item  ){
+                            CardView(item: item)
+                                .swipeActions{
+                                    Button(role:.destructive){
+                                        withAnimation{
+                                            context.delete(item)
+                                        }
+                                    }label: {
+                                        Image(systemName: "trash")
                                     }
-                                }label: {
-                                    Image(systemName: "trash")
                                 }
-                            }
+                        }
                     }
                 }
                 Section("Completadas"){
@@ -49,27 +51,10 @@ struct ContentView: View {
                     AddView()
                 }.presentationDetents([.medium])
             })
+            .navigationDestination(for: ListModel.self){
+                PurchaseView(itemListModel: $0)
+            }
         .padding()
     }
 }
-
-struct CardView:View {
-    var item:ListModel
-    var body: some View {
-        HStack{
-            Circle()
-                .foregroundStyle(item.finish ? .green : .gray)
-                .frame(width:10 ,height: 10)
-            VStack(alignment: .leading){
-                Text(item.title)
-                    .bold()
-                Text("\(item.date, format: Date.FormatStyle(date: .numeric, time: .shortened))")
-                    .font(.callout)
-                    .foregroundStyle(.gray)//giving format for date
-                Text("\(item.budget)")
-            }
-        }
-    }
-}
-
 

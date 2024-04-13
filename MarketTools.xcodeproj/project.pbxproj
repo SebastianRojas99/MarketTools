@@ -13,6 +13,8 @@
 		96BE4F0D2BC37C420085DBDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE4F0C2BC37C420085DBDF /* ContentView.swift */; };
 		96BE4F0F2BC37C440085DBDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BE4F0E2BC37C440085DBDF /* Assets.xcassets */; };
 		96BE4F122BC37C440085DBDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BE4F112BC37C440085DBDF /* Preview Assets.xcassets */; };
+		96C75C302BCB045D001AAD79 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C75C2F2BCB045D001AAD79 /* PurchaseView.swift */; };
+		96C75C322BCB0481001AAD79 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C75C312BCB0481001AAD79 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		96BE4F0C2BC37C420085DBDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96BE4F0E2BC37C440085DBDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BE4F112BC37C440085DBDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96C75C2F2BCB045D001AAD79 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		96C75C312BCB0481001AAD79 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +51,10 @@
 		96B25E2C2BC38EA200C3AFFB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96BE4F0C2BC37C420085DBDF /* ContentView.swift */,
 				96B25E2D2BC38ECE00C3AFFB /* AddView.swift */,
+				96C75C2F2BCB045D001AAD79 /* PurchaseView.swift */,
+				96C75C312BCB0481001AAD79 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -74,7 +81,6 @@
 				96B25E2C2BC38EA200C3AFFB /* Views */,
 				96B25E292BC387DB00C3AFFB /* Model */,
 				96BE4F0A2BC37C420085DBDF /* MarketToolsApp.swift */,
-				96BE4F0C2BC37C420085DBDF /* ContentView.swift */,
 				96BE4F0E2BC37C440085DBDF /* Assets.xcassets */,
 				96BE4F102BC37C440085DBDF /* Preview Content */,
 			);
@@ -162,6 +168,8 @@
 				96B25E2E2BC38ECE00C3AFFB /* AddView.swift in Sources */,
 				96B25E2B2BC3880B00C3AFFB /* ListModel.swift in Sources */,
 				96BE4F0D2BC37C420085DBDF /* ContentView.swift in Sources */,
+				96C75C302BCB045D001AAD79 /* PurchaseView.swift in Sources */,
+				96C75C322BCB0481001AAD79 /* CardView.swift in Sources */,
 				96BE4F0B2BC37C420085DBDF /* MarketToolsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
