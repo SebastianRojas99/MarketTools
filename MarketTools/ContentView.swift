@@ -12,12 +12,22 @@ struct ContentView: View {
     
     @Query (sort:\ListModel.title,order: .forward) private var items:[ListModel]
     @State private var show = false
+    @Environment(\.modelContext) var context
     var body: some View {
         NavigationStack{
             List{
                 Section("Activas"){
                     ForEach(items){ item in
                         CardView(item: item)
+                            .swipeActions{
+                                Button(role:.destructive){
+                                    withAnimation{
+                                        context.delete(item)
+                                    }
+                                }label: {
+                                    Image(systemName: "trash")
+                                }
+                            }
                     }
                 }
                 Section("Completadas"){
