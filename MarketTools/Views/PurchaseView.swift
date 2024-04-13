@@ -14,7 +14,13 @@ struct PurchaseView: View {
     @Bindable var itemListModel:ListModel
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
-    var body: some View {
+    @State private var article = ""
+    @State private var price = ""
+    @State private var quantity = 1
+    
+    @FocusState private var isFocus:Bool
+    
+     var body: some View {
         Text(itemListModel.title)
     }
 }
