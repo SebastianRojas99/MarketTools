@@ -21,7 +21,31 @@ struct PurchaseView: View {
     @FocusState private var isFocus:Bool
     
      var body: some View {
-        Text(itemListModel.title)
+         VStack{
+             VStack{
+                 TextField("article",text:$article).textFieldStyle(.roundedBorder).focused($isFocus)
+                 HStack{
+                     TextField("pricing",text:$price ).textFieldStyle(.roundedBorder).focused($isFocus).keyboardType(.decimalPad).frame(width: 100)
+                     Spacer()
+                 }
+                 HStack{
+                     Button{
+                          
+                     }label: {
+                         Text("agregar")
+                     }
+                     Spacer()
+                     Text("cash able: $\(itemListModel.budget)").bold()
+                 }
+                  
+                 }.padding(.all)
+             List{
+                 Section("Chart"){
+                     
+                 }
+             }
+         }.navigationTitle(itemListModel.title)
+             .navigationBarTitleDisplayMode(.large)
     }
 }
 
