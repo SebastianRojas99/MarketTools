@@ -18,7 +18,7 @@ struct ContentView: View {
             List{
                 Section("Activas"){
                     ForEach(items){ item in
-                        NavigationLink(value:item  ){
+                        NavigationLink(value:item){
                             CardView(item: item)
                                 .swipeActions{
                                     Button(role:.destructive){
@@ -45,16 +45,16 @@ struct ContentView: View {
                             }
                         }
         }
-        
-            }.sheet(isPresented: $show, content: {
-                NavigationStack{
-                    AddView()
-                }.presentationDetents([.medium])
-            })
-            .navigationDestination(for: ListModel.self){
-                PurchaseView(itemListModel: $0)
+                .navigationDestination(for: ListModel.self){
+                    PurchaseView(itemListModel: $0)
+                }
+                .sheet(isPresented: $show, content: {
+                        NavigationStack{
+                            AddView()
+                        }.presentationDetents([.medium])
+                    })
             }
-        .padding()
     }
 }
+
 

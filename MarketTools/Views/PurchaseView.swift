@@ -27,10 +27,11 @@ struct PurchaseView: View {
                  HStack{
                      TextField("pricing",text:$price ).textFieldStyle(.roundedBorder).focused($isFocus).keyboardType(.decimalPad).frame(width: 100)
                      Spacer()
+                     CounterView(counter: $quantity)
                  }
                  HStack{
                      Button{
-                          
+                     //let art =  (Float(price) ?? 0) * Float(quantity)
                      }label: {
                          Text("agregar")
                      }

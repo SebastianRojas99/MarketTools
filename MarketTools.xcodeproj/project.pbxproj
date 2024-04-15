@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9614484A2BCC9E390071B049 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961448492BCC9E390071B049 /* CounterView.swift */; };
+		968C1CD22BCCB18D002D377C /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C1CD12BCCB18D002D377C /* ArticleModel.swift */; };
 		96B25E2B2BC3880B00C3AFFB /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B25E2A2BC3880B00C3AFFB /* ListModel.swift */; };
 		96B25E2E2BC38ECE00C3AFFB /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B25E2D2BC38ECE00C3AFFB /* AddView.swift */; };
 		96BE4F0B2BC37C420085DBDF /* MarketToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE4F0A2BC37C420085DBDF /* MarketToolsApp.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		961448492BCC9E390071B049 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		968C1CD12BCCB18D002D377C /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		96B25E2A2BC3880B00C3AFFB /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		96B25E2D2BC38ECE00C3AFFB /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		96BE4F072BC37C420085DBDF /* MarketTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				96B25E2A2BC3880B00C3AFFB /* ListModel.swift */,
+				968C1CD12BCCB18D002D377C /* ArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -55,6 +60,7 @@
 				96B25E2D2BC38ECE00C3AFFB /* AddView.swift */,
 				96C75C2F2BCB045D001AAD79 /* PurchaseView.swift */,
 				96C75C312BCB0481001AAD79 /* CardView.swift */,
+				961448492BCC9E390071B049 /* CounterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,7 +173,9 @@
 			files = (
 				96B25E2E2BC38ECE00C3AFFB /* AddView.swift in Sources */,
 				96B25E2B2BC3880B00C3AFFB /* ListModel.swift in Sources */,
+				968C1CD22BCCB18D002D377C /* ArticleModel.swift in Sources */,
 				96BE4F0D2BC37C420085DBDF /* ContentView.swift in Sources */,
+				9614484A2BCC9E390071B049 /* CounterView.swift in Sources */,
 				96C75C302BCB045D001AAD79 /* PurchaseView.swift in Sources */,
 				96C75C322BCB0481001AAD79 /* CardView.swift in Sources */,
 				96BE4F0B2BC37C420085DBDF /* MarketToolsApp.swift in Sources */,

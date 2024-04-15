@@ -12,13 +12,15 @@ import SwiftData
 @Model
 
 final class ListModel{
+    @Attribute(.unique) var id:String
     var title:String
     var date:Date
     var  finish:Bool
     var budget:String
     var total:Float
     
-    init(title: String = "", date: Date = .now, finish: Bool = false, budget: String = "", total: Float = 0) {
+    init(id:String = UUID().uuidString,title: String = "", date: Date = .now, finish: Bool = false, budget: String = "", total: Float = 0) {
+        self.id = id
         self.title = title
         self.date = date
         self.finish = finish
