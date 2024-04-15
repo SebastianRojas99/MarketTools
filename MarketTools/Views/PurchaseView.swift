@@ -12,6 +12,7 @@ import SwiftData
 struct PurchaseView: View {
     
     @Bindable var itemListModel:ListModel
+    @Query private var articles:[ArticleModel]
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
     @State private var article = ""
@@ -31,18 +32,30 @@ struct PurchaseView: View {
                  }
                  HStack{
                      Button{
-                     //let art =  (Float(price) ?? 0) * Float(quantity)
+                     let totalPricing =  (Float(price) ?? 0) * Float(quantity)
+                         let newArticle = ArticleModel(article: article, pricing: totalPricing, idList: itemListModel.id)
+                         itemListModel.articleRelation.append(newArticle)
+                         isFocus = true
+                         article = ""
+                         price = ""
+                         quantity = 1 
                      }label: {
                          Text("agregar")
                      }
                      Spacer()
-                     Text("cash able: $\(itemListModel.budget)").bold()
+                     Text("price: $\(itemListModel.budget)").bold()
                  }
                   
                  }.padding(.all)
              List{
                  Section("Chart"){
-                     
+                     ForEach(articles){ item in
+                         HStack{
+                             Text(item.article)
+                             Spacer()
+                             Text(item.pricing.formatted())
+                         }
+                     }
                  }
              }
          }.navigationTitle(itemListModel.title)

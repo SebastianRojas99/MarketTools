@@ -19,13 +19,18 @@ final class ListModel{
     var budget:String
     var total:Float
     
-    init(id:String = UUID().uuidString,title: String = "", date: Date = .now, finish: Bool = false, budget: String = "", total: Float = 0) {
+    @Relationship(deleteRule:.cascade)
+    var articleRelation: [ArticleModel]
+    
+    init(id:String = UUID().uuidString,title: String = "", date: Date = .now, finish: Bool = false, budget: String = "", total: Float = 0,articleRelation:[ArticleModel] = []) {
+        
         self.id = id
         self.title = title
         self.date = date
         self.finish = finish
         self.budget = budget
         self.total = total
+        self.articleRelation = articleRelation
     }
 }
 

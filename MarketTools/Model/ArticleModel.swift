@@ -14,6 +14,9 @@ final class ArticleModel{
     let pricing :   Float
     let idList : String
     
+    @Relationship(inverse:\ListModel.articleRelation)
+    var relationList:ListModel? 
+    
     init(article: String, pricing: Float, idList: String) {
         self.article = article
         self.pricing = pricing
