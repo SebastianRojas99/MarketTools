@@ -21,6 +21,14 @@ struct PurchaseView: View {
     
     @FocusState private var isFocus:Bool
     
+    //MARK: pendiente de solucion de swiftdata
+    /*
+    init(itemListModel:ListModel){
+        self.itemListModel = itemListModel
+        _article = Query(filter: #Predicate<ArticleModel> { $0.idList.contains(itemListModel.id)
+        } )
+    }*/
+ 
      var body: some View {
          VStack{
              VStack{
@@ -49,7 +57,7 @@ struct PurchaseView: View {
                  }.padding(.all)
              List{
                  Section("Chart"){
-                     ForEach(articles){ item in
+                     ForEach(articles.filter {$0.idList.contains(itemListModel.id)} ){ item in //filtro usado solo por bd chica
                          HStack{
                              Text(item.article)
                              Spacer()
