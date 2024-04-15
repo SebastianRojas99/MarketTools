@@ -10,14 +10,15 @@ import SwiftData
 struct ContentView: View {
     
     
-    @Query (sort:\ListModel.title,order: .forward) private var items:[ListModel]
+    @Query (filter: #Predicate<ListModel> {$0.finish == false}) private var items:[ListModel]
+    @Query (filter: #Predicate<ListModel> {$0.finish == true}) private var itemsComplete:[ListModel]
     @State private var show = false
     @Environment(\.modelContext) var context
     var body: some View {
         NavigationStack{
             List{
                 Section("Activas"){
-                    ForEach(items.filter{$0.finish == false}){ item in
+                    ForEach(items){ item in
                         NavigationLink(value:item){
                             CardView(item: item)
                                 .swipeActions{
@@ -34,9 +35,9 @@ struct ContentView: View {
                 }
                 Section("Completadas"){
                     Section("Activas"){
-                        ForEach(items.filter{$0.finish == true}){ item in
+                        ForEach(itemsComplete){ item in
                             NavigationLink(value:item){
-                                CardView(item: item)
+                                CardCompleteView(item: item)
                                     .swipeActions{
                                         Button(role:.destructive){
                                             withAnimation{
