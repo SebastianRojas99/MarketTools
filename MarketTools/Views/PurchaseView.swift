@@ -18,9 +18,10 @@ struct PurchaseView: View {
     @State private var article = ""
     @State private var price = ""
     @State private var quantity = 1
-    
     @FocusState private var isFocus:Bool
-    
+    var finalPrice:Float{
+        articles.filter{$0.idList.contains(itemListModel.id)}.reduce(0.0) {$0 + $1.pricing}
+    }
     //MARK: pendiente de solucion de swiftdata
     /*
     init(itemListModel:ListModel){
@@ -40,13 +41,16 @@ struct PurchaseView: View {
                  }
                  HStack{
                      Button{
-                     let totalPricing =  (Float(price) ?? 0) * Float(quantity)
+                     let totalPricing =   (Float(price) ?? 0) * Float(quantity)
                          let newArticle = ArticleModel(article: article, pricing: totalPricing, idList: itemListModel.id)
                          itemListModel.articleRelation.append(newArticle)
                          isFocus = true
                          article = ""
                          price = ""
-                         quantity = 1 
+                         quantity = 1
+                         
+                         let updateBudget = (Float(itemListModel.budget) ?? 0) - totalPricing
+                         itemListModel.budget = String(updateBudget)
                      }label: {
                          Text("agregar")
                      }
@@ -62,12 +66,39 @@ struct PurchaseView: View {
                              Text(item.article)
                              Spacer()
                              Text(item.pricing.formatted())
+                                 .swipeActions{
+                                     Button(role:.destructive){
+                                         withAnimation{
+                                             let add = (Float(itemListModel.budget) ?? 0) + item.pricing
+                                             itemListModel.budget = String(add)
+                                             context.delete(item)
+                                         }
+                                     }label: {
+                                        Image(systemName: "trash")
+                                     }
+                                 }
                          }
+                     }
+                     HStack{
+                         Text("Total:")
+                         Spacer()
+                         Text(" $\(finalPrice.formatted())").bold()
                      }
                  }
              }
          }.navigationTitle(itemListModel.title)
              .navigationBarTitleDisplayMode(.large)
+             .toolbar{
+                 ToolbarItem{
+                     Button{
+                         itemListModel.finish = true
+                         itemListModel.total = finalPrice
+                         dismiss()
+                     }label: {
+                         Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                     }
+                 }
+             }
     }
 }
 

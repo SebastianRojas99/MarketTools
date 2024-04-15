@@ -17,7 +17,7 @@ struct ContentView: View {
         NavigationStack{
             List{
                 Section("Activas"){
-                    ForEach(items){ item in
+                    ForEach(items.filter{$0.finish == false}){ item in
                         NavigationLink(value:item){
                             CardView(item: item)
                                 .swipeActions{
@@ -33,7 +33,22 @@ struct ContentView: View {
                     }
                 }
                 Section("Completadas"){
-                    
+                    Section("Activas"){
+                        ForEach(items.filter{$0.finish == true}){ item in
+                            NavigationLink(value:item){
+                                CardView(item: item)
+                                    .swipeActions{
+                                        Button(role:.destructive){
+                                            withAnimation{
+                                                context.delete(item)
+                                            }
+                                        }label: {
+                                            Image(systemName: "trash")
+                                        }
+                                    }
+                            }
+                            }
+                        }
                 }
             }.navigationTitle("Compras")
                 .toolbar{
