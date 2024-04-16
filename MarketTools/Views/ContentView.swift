@@ -19,25 +19,11 @@ struct ContentView: View {
             List{
                 Section("Activas"){
                     ForEach(items){ item in
-                        NavigationLink(value:item){
-                            CardView(item: item)
-                                .swipeActions{
-                                    Button(role:.destructive){
-                                        withAnimation{
-                                            context.delete(item)
-                                        }
-                                    }label: {
-                                        Image(systemName: "trash")
-                                    }
-                                }
-                        }
-                    }
-                }
-                Section("Completadas"){
-                    Section("Activas"){
-                        ForEach(itemsComplete){ item in
+                        if items.isEmpty{
+                            ContentUnavailableView("Nothing to see...",systemImage: "x.circle.fill")
+                        }else{
                             NavigationLink(value:item){
-                                CardCompleteView(item: item)
+                                CardView(item: item)
                                     .swipeActions{
                                         Button(role:.destructive){
                                             withAnimation{
@@ -48,8 +34,31 @@ struct ContentView: View {
                                         }
                                     }
                             }
+                        }
+                    }
+                }
+                Section("Completadas"){
+                    Section("Activas"){
+                        ForEach(itemsComplete){ item in
+                            if itemsComplete.isEmpty{
+                                ContentUnavailableView("Nothing to see...",systemImage: "x.circle.fill")
+                            }else{
+                                NavigationLink(value:item){
+                                    CardCompleteView(item: item)
+                                        .swipeActions{
+                                            Button(role:.destructive){
+                                                withAnimation{
+                                                    context.delete(item)
+                                                }
+                                            }label: {
+                                                Image(systemName: "trash")
+                                            }
+                                        }
+                                }
                             }
                         }
+                    }
+                    
                 }
             }.navigationTitle("Compras")
                 .toolbar{
